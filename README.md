@@ -15,24 +15,6 @@ The results are compared to analyze efficiency and performance.
 
 ---
 
-## Project Structure
-
-mst/
-├── src/
-│ └── main/
-│ └── java/com/example/mst/
-│ ├── Main.java # Runs MST algorithms
-│ ├── GraphData.java # Represents graph structure
-│ ├── EdgeData.java # Represents edges
-│ ├── JsonReader.java # Reads graph JSON input
-│ ├── Prim.java # Prim’s algorithm
-│ └── Kruskal.java # Kruskal’s algorithm
-├── input.json # Example input graphs
-├── output.json # MST results in JSON format
-├── pom.xml # Maven configuration
-└── README.md # Project report
----
-
 ## Input Data
 
 Input is a JSON file with a list of graphs. Each graph contains:
@@ -47,19 +29,22 @@ mvn clean compile
 
 Run the program:
 
-mvn exec:java -Dexec.mainClass="com.example.mst.Main"
+mvn exec: java -Dexec.mainClass="com.example.mst.Main"
 
 
 Output: Results for each graph are printed to the console and stored in output.json.
 
-MST Algorithms
-Prim’s Algorithm
+---
+
+## MST Algorithms
+
+- Prim’s Algorithm
 
 Greedily grows the MST by always adding the minimum weight edge connecting a vertex in the MST to a vertex outside.
 
 Complexity: O(E log V) using a priority queue.
 
-Kruskal’s Algorithm
+- Kruskal’s Algorithm
 
 Greedily adds edges in order of increasing weight, skipping edges that would form cycles.
 
