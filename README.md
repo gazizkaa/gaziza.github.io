@@ -53,6 +53,7 @@ Complexity: O(E log E) using Union-Find.
 ## Results
 
 ![MST Graph](results.png)
+
 From the conducted experiments on graphs of different sizes and densities, both Prim’s and Kruskal’s algorithms successfully computed the Minimum Spanning Tree (MST) with identical total costs for all graphs, confirming the correctness of the implementations.
 
 Small Graphs (4–5 vertices)
@@ -106,10 +107,16 @@ For large, sparse graphs, Kruskal is preferable due to better handling of edges 
 For dense graphs, Prim may be preferred if adjacency-based structures are already used.
 ## Conclusion
 
-Both algorithms produce the same MST total cost, confirming correctness.
+Both algorithms consistently produce MSTs with identical total costs, ensuring correctness.
 
-Prim tends to be slightly slower on large graphs due to priority queue operations.
+Kruskal generally performs faster on sparse graphs, while Prim can be advantageous for dense graphs.
 
-Kruskal is more efficient on sparse graphs because sorting edges is cheaper than updating a priority queue.
+The choice of algorithm depends on graph size, density, and internal representation:
 
-Recommendation: Use Kruskal for sparse networks and Prim for dense graphs.
+Sparse graphs: Kruskal.
+
+Dense graphs: Prim.
+
+Small graphs: Either is sufficient.
+
+The number of operations grows with graph size, but execution time differences become significant only for larger datasets.
